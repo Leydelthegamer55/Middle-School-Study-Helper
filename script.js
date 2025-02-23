@@ -1,27 +1,42 @@
-// Function to show all homework
-function showHomework() {
-    let content = "<ul>";
-    homeworkList.forEach(hw => {
-        content += `<li><strong>${hw.subject}:</strong> ${hw.task} 
-        <a href="${hw.link}" target="_blank">[Learn More]</a></li>`;
+function showQuiz() {
+    document.getElementById("homeworkSection").style.display = "none";
+    document.getElementById("quizSection").style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let quizQuestions = [
+        { question: "What is 5 + 3?", answer: "8" },
+        { question: "Who discovered gravity?", answer: "Newton" },
+        { question: "What is the capital of France?", answer: "Paris" }
+    ];
+
+    let quizContainer = document.getElementById("quizContainer");
+    quizContainer.innerHTML = "";
+
+    quizQuestions.forEach((q, index) => {
+        let questionText = document.createElement("p");
+        questionText.textContent = q.question;
+
+        let input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("id", "answer" + index);
+
+        quizContainer.appendChild(questionText);
+        quizContainer.appendChild(input);
     });
-    content += "</ul>";
-    document.getElementById("homework-content").innerHTML = content;
-}
 
-// Function to add new homework
-function addHomework() {
-    let subject = document.getElementById("subject").value;
-    let task = document.getElementById("task").value;
-    let link = document.getElementById("link").value || "#";
+    let submitBtn = document.createElement("button");
+    submitBtn.textContent = "Submit Answers";
+    submitBtn.onclick = function() {
+        quizQuestions.forEach((q, index) => {
+            let userAnswer = document.getElementById("answer" + index).value;
+            if (userAnswer.toLowerCase() === q.answer.toLowerCase()) {
+                alert("Correct for question " + (index + 1));
+            } else {
+                alert("Wrong for question " + (index + 1) + ". The answer is " + q.answer);
+            }
+        });
+    };
 
-    if (subject && task) {
-        homeworkList.push({ subject, task, link });
-        showHomework(); // Refresh the homework list
-        document.getElementById("subject").value = "";
-        document.getElementById("task").value = "";
-        document.getElementById("link").value = "";
-    } else {
-        alert("Please enter both a subject and a homework task.");
-    }
-}
+    quizContainer.appendChild(submitBtn);
+});
