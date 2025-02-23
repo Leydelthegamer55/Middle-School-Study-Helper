@@ -31,3 +31,25 @@ function addHomework() {
         alert("Please enter both a subject and a task.");
     }
 }
+const homeworkList = [
+    { 
+        subject: "Math", 
+        task: "Solve 10 algebra equations.", 
+        link: "https://www.khanacademy.org/math/algebra" 
+    },
+    { 
+        subject: "Science", 
+        task: "Read Chapter 5 and summarize.", 
+        link: "https://www.khanacademy.org/science" 
+    }
+];
+
+// Function to Display Homework with Learning Links
+function getHomework() {
+    let content = "";
+    homeworkList.forEach(hw => {
+        content += `<p><strong>${hw.subject}:</strong> ${hw.task} 
+                    <a href="${hw.link}" target="_blank">[Learn]</a></p>`;
+    });
+    document.getElementById("homework-content").innerHTML = content;
+}
