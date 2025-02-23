@@ -53,3 +53,18 @@ function getHomework() {
     });
     document.getElementById("homework-content").innerHTML = content;
 }
+function addHomework() {
+    let subject = document.getElementById("subject").value;
+    let task = document.getElementById("task").value;
+    let link = document.getElementById("link").value || "#"; // Default to "#" if no link
+
+    if (subject && task) {
+        homeworkList.push({ subject, task, link }); // Add with link
+        getHomework(); // Refresh display
+        document.getElementById("subject").value = ""; // Clear input
+        document.getElementById("task").value = ""; // Clear input
+        document.getElementById("link").value = ""; // Clear input
+    } else {
+        alert("Please enter both a subject and a task.");
+    }
+}
