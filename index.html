@@ -9,13 +9,14 @@
 <body>
 
     <header>
-        <h1>Welcome to Middle School Study Helper</h1>
-        <p>Your go-to platform for quizzes and study materials!</p>
+        <h1>Middle School Study Helper</h1>
+        <p>Your go-to platform for studying and quizzes!</p>
     </header>
 
     <nav>
         <button onclick="showHomework()">View Homework</button>
         <button onclick="showQuiz()">Take a Quiz</button>
+        <button onclick="showAddHomework()">Add Homework</button>
     </nav>
 
     <main>
@@ -27,6 +28,14 @@
         <section id="quizSection" style="display: none;">
             <h2>Quiz Time!</h2>
             <div id="quizContainer"></div>
+        </section>
+
+        <section id="addHomeworkSection" style="display: none;">
+            <h2>Add Your Homework</h2>
+            <input type="text" id="homeworkSubject" placeholder="Subject (e.g., Math, Science)">
+            <input type="text" id="homeworkTitle" placeholder="Homework Title">
+            <input type="url" id="homeworkLink" placeholder="Resource Link">
+            <button onclick="addHomework()">Submit Homework</button>
         </section>
     </main>
 
