@@ -7,34 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Middle School Study Helper</h1>
-        <p>Find and add homework assignments for different subjects.</p>
+        <h1>Welcome to Middle School Study Helper</h1>
+        <p>Your go-to platform for quizzes and study materials!</p>
     </header>
 
+    <nav>
+        <button onclick="showHomework()">View Homework</button>
+        <button onclick="showQuiz()">Take a Quiz</button>
+    </nav>
+
     <main>
-        <section id="homework-section">
-            <h2>Homework List</h2>
-            <button onclick="showHomework()">View Homework</button>
-            <div id="homework-content"></div>
+        <section id="homeworkSection" style="display: none;">
+            <h2>Homework Resources</h2>
+            <ul id="homeworkList"></ul>
         </section>
 
-        <section id="add-homework">
-            <h2>Add Homework</h2>
-            <label>Subject:</label>
-            <input type="text" id="subject" placeholder="Enter Subject">
-            
-            <label>Homework Task:</label>
-            <input type="text" id="task" placeholder="Enter Homework Task">
-            
-            <label>Learning Link (optional):</label>
-            <input type="url" id="link" placeholder="Enter a Link">
-            
-            <button onclick="addHomework()">Add Homework</button>
+        <section id="quizSection" style="display: none;">
+            <h2>Quiz Time!</h2>
+            <div id="quizContainer"></div>
         </section>
     </main>
 
     <script src="homework.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
