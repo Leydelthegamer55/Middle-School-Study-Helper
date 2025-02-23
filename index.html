@@ -11,32 +11,23 @@
         <h1>Welcome to Middle School Study Helper</h1>
         <p>Your go-to platform for quizzes and study material.</p>
     </header>
-    
+
     <main>
         <section id="homework-section">
             <h2>Homework Help</h2>
-            <button onclick="getHomework()">View Homework</button>
+            <button onclick="showHomework()">View Homework</button>
             <div id="homework-content"></div>
+        </section>
+
+        <section id="add-homework">
+            <h2>Add Your Homework</h2>
+            <input type="text" id="subject" placeholder="Enter Subject">
+            <input type="text" id="task" placeholder="Enter Homework Description">
+            <input type="url" id="link" placeholder="Enter Learning Link (optional)">
+            <button onclick="addHomework()">Add Homework</button>
         </section>
     </main>
 
     <script src="script.js"></script>
 </body>
 </html>
-<section id="homework-section">
-    <h2>Homework Help</h2>
-    <button onclick="getHomework()">View Homework</button>
-    <div id="homework-content"></div>
-
-    <!-- New Section for Adding Homework -->
-    <h3>Add Your Homework</h3>
-    <input type="text" id="subject" placeholder="Enter Subject">
-    <input type="text" id="task" placeholder="Enter Homework Task">
-    <button onclick="addHomework()">Add Homework</button>
-</section>
-<h3>Add Your Homework</h3>
-<input type="text" id="subject" placeholder="Enter Subject">
-<input type="text" id="task" placeholder="Enter Homework Task">
-<input type="text" id="link" placeholder="Enter Study Link (optional)">
-<button onclick="addHomework()">Add Homework</button>
-<script src="script.js"></script>
