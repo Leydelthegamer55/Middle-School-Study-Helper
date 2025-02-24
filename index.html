@@ -7,40 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <h1>Middle School Study Helper</h1>
-        <p>Your go-to platform for studying and quizzes!</p>
+        <h1>Welcome to Middle School Study Helper</h1>
+        <p>Your go-to platform for quizzes and study material.</p>
     </header>
 
-    <nav>
-        <button onclick="showHomework()">View Homework</button>
-        <button onclick="showQuiz()">Take a Quiz</button>
-        <button onclick="showAddHomework()">Add Homework</button>
-    </nav>
-
     <main>
-        <section id="homeworkSection" style="display: none;">
-            <h2>Homework Resources</h2>
-            <ul id="homeworkList"></ul>
+        <section id="homework-section">
+            <h2>Homework Help</h2>
+            <button onclick="showHomework()">View Homework</button>
+            <div id="homework-content"></div>
         </section>
 
-        <section id="quizSection" style="display: none;">
-            <h2>Quiz Time!</h2>
-            <div id="quizContainer"></div>
-        </section>
-
-        <section id="addHomeworkSection" style="display: none;">
+        <section id="add-homework">
             <h2>Add Your Homework</h2>
-            <input type="text" id="homeworkSubject" placeholder="Subject (e.g., Math, Science)">
-            <input type="text" id="homeworkTitle" placeholder="Homework Title">
-            <input type="url" id="homeworkLink" placeholder="Resource Link">
-            <button onclick="addHomework()">Submit Homework</button>
+            <input type="text" id="subject" placeholder="Enter Subject">
+            <input type="text" id="task" placeholder="Enter Homework Description">
+            <input type="url" id="link" placeholder="Enter Learning Link (optional)">
+            <button onclick="addHomework()">Add Homework</button>
         </section>
     </main>
 
-    <script src="homework.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
