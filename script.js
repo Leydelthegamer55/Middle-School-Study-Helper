@@ -1,21 +1,15 @@
-let homeworkList = [
-    { subject: "Math", task: "Solve 10 algebra equations.", link: "https://www.khanacademy.org/math" },
-    { subject: "Science", task: "Read Chapter 5 and summarize.", link: "https://www.nationalgeographic.com/science" },
-    { subject: "English", task: "Write a short essay on your favorite book.", link: "https://www.grammarly.com/blog/essay-writing/" },
-    { subject: "History", task: "Research World War II causes.", link: "https://www.history.com/topics/world-war-ii" },
-    { subject: "Geography", task: "Learn about the continents and oceans.", link: "https://www.nationalgeographic.org/education/" },
-    { subject: "Computer Science", task: "Complete a basic JavaScript tutorial.", link: "https://www.w3schools.com/js/" }
-];
-
+// Function to show all homework
 function showHomework() {
-    let content = "";
+    let content = "<ul>";
     homeworkList.forEach(hw => {
-        content += `<p><strong>${hw.subject}:</strong> ${hw.task} 
-        <a href="${hw.link}" target="_blank">[Learn More]</a></p>`;
+        content += `<li><strong>${hw.subject}:</strong> ${hw.task} 
+        <a href="${hw.link}" target="_blank">[Learn More]</a></li>`;
     });
+    content += "</ul>";
     document.getElementById("homework-content").innerHTML = content;
 }
 
+// Function to add new homework
 function addHomework() {
     let subject = document.getElementById("subject").value;
     let task = document.getElementById("task").value;
@@ -28,6 +22,6 @@ function addHomework() {
         document.getElementById("task").value = "";
         document.getElementById("link").value = "";
     } else {
-        alert("Please enter both subject and homework task.");
+        alert("Please enter both a subject and a homework task.");
     }
 }
